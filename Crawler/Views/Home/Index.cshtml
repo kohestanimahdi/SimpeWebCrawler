@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "Kohestani";
+}
+
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <!-- <h6 class="border-bottom border-gray pb-2 mb-0">Filter</h6> -->
+    <div class="media text-muted pt-3">
+        <div class="container p-3">
+            <form>
+                <div class="form-label-group">
+                    <label for="enterurl">URL : </label>
+                    <input type="text" id="enterurl" class="form-control" placeholder="Example.com" required="" autofocus="" autocomplete="on" ng-model="enterurl">
+                </div>
+                <br />
+                <div class="form-label-group">
+                    <label for="Depth">Depth : </label>
+                    <input type="number" id="Depth" class="form-control" placeholder="0" required="" autofocus="" autocomplete="on" ng-model="Depth">
+                </div>
+                <br />
+                <div class="checkbox mb-3 form-inline">
+                    <div class="custom-control custom-checkbox mb-3" style="margin:10px;">
+                        <input type="checkbox" class="custom-control-input" id="LoadSiteMap" name="LoadSiteMap" ng-model="LoadSiteMap">
+                        <label class="custom-control-label" for="LoadSiteMap">Load Only From SiteMap</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3" style="margin:10px;">
+                        <input type="checkbox" class="custom-control-input" id="UseHttps" name="UseHttps" ng-model="UseHttps">
+                        <label class="custom-control-label" for="UseHttps">Use Https ?</label>
+                    </div>
+
+                </div>
+                <btn class="btn btn-lg btn-primary btn-block " ng-click="StartCrawling()" ng-show="!Loading">Crawl</btn>
+
+                <button class="btn btn-lg btn-primary btn-block " type="button" disabled ng-show="Loading">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Crawling...
+                </button>
+
+                @*<p class="mt-5 mb-3 text-muted text-center small">Mahdi Kohestani 2020</p>*@
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+<div class="my-3 p-3 bg-white rounded shadow-sm" id="Resault" ng-show="FinishLoading">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Resault</h6>
+
+    <div class="media text-muted pt-3">
+
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="max-width: 45%; width: 45%;" scope="row">URL</th>
+                            <th style="max-width: 35%; width: 35%;" scope="row">Title</th>
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in crawlurls">
+                            <td aria-multiline="true">{{$index+1}}</td>
+                            <td style="max-width:100%; max-width:800px; word-wrap:break-word;">{{x.url}}</td>
+                            <td>{{x.title}}</td>
+                            <td><button class="btn btn-info" title="Load Title" ng-click="LoadTitle(x.url,$index)"><i class="fas fa-info-circle"></i></button></td> <!-- data-toggle="modal" data-target="#ShowPostLink"-->
+                            <td><button class="btn btn-primary" title="Post Form" ng-click="PostForm(x.url)" ng-show="x.hasForm"><i class="fas fa-folder"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div ng-repeat="y in PostFormDatas">
+
+    <p>{{y}}</p>
+
+</div>*@
+<div class="modal fade" id="ShowPostLink">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                @*<table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+  
+                            <th scope="row">URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="y in PostFormDatas">
+                            <td style="max-width:100%; max-width:600px; word-wrap:break-word;">{{y}}</td>
+                        </tr>
+                    </tbody>
+                </table>*@
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+

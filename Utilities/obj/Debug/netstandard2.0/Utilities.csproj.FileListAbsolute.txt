@@ -1,0 +1,5 @@
+C:\Users\Mahdi\source\repos\Crawler\Utilities\bin\Debug\netstandard2.0\Utilities.deps.json
+C:\Users\Mahdi\source\repos\Crawler\Utilities\bin\Debug\netstandard2.0\Utilities.dll
+C:\Users\Mahdi\source\repos\Crawler\Utilities\obj\Debug\netstandard2.0\Utilities.csprojAssemblyReference.cache
+C:\Users\Mahdi\source\repos\Crawler\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfoInputs.cache
+C:\Users\Mahdi\source\repos\Crawler\Utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfo.cs

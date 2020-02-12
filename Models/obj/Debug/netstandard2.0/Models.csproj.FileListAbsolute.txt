@@ -1,0 +1,8 @@
+C:\Users\Mahdi\source\repos\Crawler\Models\bin\Debug\netstandard2.0\Models.deps.json
+C:\Users\Mahdi\source\repos\Crawler\Models\bin\Debug\netstandard2.0\Models.dll
+C:\Users\Mahdi\source\repos\Crawler\Models\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\Mahdi\source\repos\Crawler\Models\obj\Debug\netstandard2.0\Models.csprojAssemblyReference.cache
+C:\Users\Mahdi\source\repos\Crawler\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+C:\Users\Mahdi\source\repos\Crawler\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+C:\Users\Mahdi\source\repos\Crawler\Models\obj\Debug\netstandard2.0\Models.dll
+C:\Users\Mahdi\source\repos\Crawler\Models\obj\Debug\netstandard2.0\Models.pdb
